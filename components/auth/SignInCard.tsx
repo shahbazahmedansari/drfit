@@ -11,15 +11,21 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Separator } from "../ui/separator";
 import { FaGithub, FaGoogle } from "react-icons/fa6";
+import { useState } from "react";
 
 interface SignInCardProps {
   setState: (state: SignUpFlow) => void;
 }
 
 export const SignInCard = ({ setState }: SignInCardProps) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
-    <Card className="w-full h-full p-8 bg-indigo-800 text-white border-none">
+    <Card className="w-full h-full p-4 bg-indigo-800 text-white border-none">
       <CardHeader className="space-y-3">
+        <h1 className="text-4xl font-extrabold">
+          Welcome to <span className="text-green-500 text-4xl">Drift</span>
+        </h1>
         <CardTitle>Login to Continue</CardTitle>
         <CardDescription>
           Use your email or another service to continue
@@ -31,10 +37,13 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
                 Enter your Email
               </Label>
               <Input
-                onChange={() => {}}
-                className="w-full"
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={false}
+                value={email}
+                className="w-full text-black"
                 type="email"
                 placeholder="Email"
+                required
               />
             </div>
             <div className="space-y-2.5 mt-4">
@@ -42,10 +51,13 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
                 Enter Password
               </Label>
               <Input
-                onChange={() => {}}
-                className="w-full"
+                onChange={(e) => setPassword(e.target.value)}
+                disabled={false}
+                value={password}
+                className="w-full text-black"
                 type="password"
                 placeholder="Password"
+                required
               />
             </div>
             <Button type="submit" onClick={() => {}} className="mt-6">
