@@ -1,12 +1,9 @@
-"use client";
-import { useState } from "react";
-import { SignUpCard } from "./SignUpCard";
+"use client"
+import React from "react";
+import { SignInCard } from "@/components/auth/SignInCard";
 import { motion } from "framer-motion";
-import { SignUpFlow } from "@/types";
-import { SignInCard } from "./SignInCard";
 
-export const AuthPage = () => {
-  const [state, setState] = useState<SignUpFlow>("signUp");
+const SignIn = () => {
   return (
     <div className="flex h-full items-center justify-center">
       <motion.div
@@ -15,8 +12,10 @@ export const AuthPage = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        {state === "signIn" ? <SignInCard /> : <SignUpCard />}
+        <SignInCard />
       </motion.div>
     </div>
   );
 };
+
+export default SignIn;

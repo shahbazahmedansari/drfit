@@ -1,4 +1,4 @@
-import { SignUpFlow } from "@/types";
+"use client"
 import { Button } from "../ui/button";
 import {
   Card,
@@ -12,14 +12,12 @@ import { Label } from "../ui/label";
 import { Separator } from "../ui/separator";
 import { FaGithub, FaGoogle } from "react-icons/fa6";
 import { useState } from "react";
+import Link from "next/link";
 
-interface SignInCardProps {
-  setState: (state: SignUpFlow) => void;
-}
-
-export const SignInCard = ({ setState }: SignInCardProps) => {
+export const SignInCard = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   return (
     <Card className="w-full h-full p-4 bg-indigo-800 text-white border-none">
       <CardHeader className="space-y-3">
@@ -83,12 +81,12 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
           </div>
           <p className="py-3">
             Don&apos;t have an account ?
-            <span
-              onClick={() => setState("signUp")}
+            <Link
+              href="/signup"
               className="text-green-500 px-2 hover:text-rose-500 cursor-pointer hover:underline"
             >
               Sign Up
-            </span>
+            </Link>
           </p>
         </CardContent>
       </CardHeader>
