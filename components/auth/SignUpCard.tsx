@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "../ui/button";
+import { signIn } from "next-auth/react";
 import {
   Card,
   CardContent,
@@ -80,14 +81,18 @@ export const SignUpCard = () => {
           <div>
             <Button
               className="bg-white text-black w-full my-1 hover:text-white"
-              onClick={() => {}}
+              onClick={async () => {
+                await signIn("google");
+              }}
             >
               <FaGoogle className="size-5" />
               Continue with Google
             </Button>
             <Button
               className="bg-white text-black w-full my-2 hover:text-white"
-              onClick={() => {}}
+              onClick={async () => {
+                await signIn("github");
+              }}
             >
               <FaGithub />
               Continue with Github

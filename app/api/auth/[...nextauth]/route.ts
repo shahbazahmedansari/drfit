@@ -13,6 +13,12 @@ export const authOptions = {
       clientSecret: process.env.NEXT_AUTH_GOOGLE_CLIENT_SECRET || "",
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {},
+  pages: {
+    signIn: "/signin",
+    signup: "/signup",
+  },
 };
 
 const handler = NextAuth(authOptions);
