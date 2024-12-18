@@ -32,9 +32,7 @@ export const SignInCard = () => {
         <CardContent className="px-0">
           <form>
             <div className="space-y-2.5">
-              <Label htmlFor="email" className="text-md">
-                Enter your Email
-              </Label>
+              <Label>Enter your Email</Label>
               <Input
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={false}
@@ -46,9 +44,7 @@ export const SignInCard = () => {
               />
             </div>
             <div className="space-y-2.5 mt-4">
-              <Label htmlFor="password" className="text-md">
-                Enter Password
-              </Label>
+              <Label>Enter Password</Label>
               <Input
                 onChange={(e) => setPassword(e.target.value)}
                 disabled={false}
@@ -63,7 +59,7 @@ export const SignInCard = () => {
               Login
             </Button>
           </form>
-          <Separator className="my-4" />
+          <Separator />
           <div>
             <Button
               className="bg-white text-black w-full my-1 hover:text-white"
